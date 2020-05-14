@@ -1,0 +1,38 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:id="mainBorderPane"
+            fx:controller="com.saif.todolist.Controller">
+    <top>
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color:white;">
+            <ToolBar style="-fx-background-color:white;">
+                <Button text="New" onAction="#showNewItemDialog" style="-fx-font-size:16;"/>
+                <Button text="Delete" onAction="#KeyboardDelete" style="-fx-font-size:16;"/>
+                <Button text="Edit" onAction="#editItemDialog" style="-fx-font-size:16;"/>
+            </ToolBar>
+        </HBox>
+    </top>
+    <left>
+        <ListView fx:id="todoListView" onKeyPressed="#handleKeyPressed" style="-fx-font-size:18;">
+
+        </ListView>
+    </left>
+    <center>
+        <VBox style="-fx-background-color:white;">
+            <TextArea fx:id="itemDetailsTextArea" VBox.vgrow="ALWAYS" wrapText="true" style="-fx-font-size:20;"/>
+            <HBox>
+                <padding>
+                    <Insets left="5"/>
+                </padding>
+                <Label fx:id="deadlineLabel">
+                    <font>
+                        <Font name="Times New Roman bold" size="18"/>
+                    </font>
+                </Label>
+            </HBox>
+
+        </VBox>
+
+    </center>
+</BorderPane>
